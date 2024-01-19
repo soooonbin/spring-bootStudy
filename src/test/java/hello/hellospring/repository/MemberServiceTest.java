@@ -1,6 +1,7 @@
+package hello.hellospring.repository;
+
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemoryMemberRepository;
-import hello.hellospring.service.Memberservice;
+import hello.hellospring.service.MemberService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MemberServiceTest {
-    Memberservice memberservice;
+    MemberService memberservice;
     MemoryMemberRepository memberRepository;
 
     @BeforeEach
     public void beforeEach() {
         memberRepository = new MemoryMemberRepository();
-        memberservice = new Memberservice(memberRepository);
+        memberservice = new MemberService(memberRepository);
     }
 
     @AfterEach
